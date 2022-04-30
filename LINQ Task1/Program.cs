@@ -28,11 +28,8 @@ namespace LINQTask1
         {
 
          
-            IEnumerable<int> result = numbers.Select(val => val * val);
-            Console.WriteLine(result.ToList());
-
-            return result.SequenceEqual(squares);//All(num => num == result);
-
+         
+            return numbers.Select(val => val * val).SequenceEqual(squares);
 
         }
     }
