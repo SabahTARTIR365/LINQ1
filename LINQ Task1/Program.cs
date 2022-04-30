@@ -27,10 +27,9 @@ namespace LINQTask1
         public static bool TestForSquares(IEnumerable<int> numbers, IEnumerable<int> squares)
         {
 
-            //  return numbers.Aggregate((sqr, val) => sqr = val * val).
-            //Cast<int>().SequenceEqual(squares);
-
-            IEnumerable<int> result = numbers.Select((sqr, val) => sqr = val * val);// squares.Cast<int>();
+         
+            IEnumerable<int> result = numbers.Select(val => val * val);
+            Console.WriteLine(result.ToList());
 
             return result.SequenceEqual(squares);//All(num => num == result);
 
